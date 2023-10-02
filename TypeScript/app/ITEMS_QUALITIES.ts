@@ -5,7 +5,7 @@ export const ITEMS_QUALITIES = {
     max: 50,
   },
   backStagePasses: {
-    default: 1, // SellIn에 따라 변동
+    default: 1,
     min: 0,
     max: 50,
   },
