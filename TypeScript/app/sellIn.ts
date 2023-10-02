@@ -11,10 +11,3 @@ export const getSellInStatusForConcert = (sellIn: number) => {
     return 2;
   } else return 1;
 };
-
-/**
- * - SellIn > 10 : 매일 +1
- * - SellIn ≤ 10 : 매일 +2
- * - SellIn ≤ 5 : 매일 +3
- * - sellIn ≤ 0 : 0
- */
