@@ -15,7 +15,7 @@ export const updateItems = (
 
   let quality = item.quality + ITEMS_QUALITIES[category].default * sellInStatus;
 
-  // backStagePasses이면서 sellIn이 0이하인 경우만 sellIn = 0이됨.
+  // backStagePasses이면서 sellIn이 0이하인 경우만 sellInStatus = 0이됨.
   if (sellInStatus === 0) quality = 0;
 
   const mxQuality = Math.max(quality, ITEMS_QUALITIES[category].min);
