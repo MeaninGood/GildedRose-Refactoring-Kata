@@ -7,15 +7,17 @@ export const updateItems = (
   category: "agedBrie" | "backStagePasses" | "sulfuras" | "conjured" | "other"
 ) => {
   item.sellIn -= 1;
-  const mxQuality = Math.min(item.quality, ITEMS_QUALITIES[category].max);
 
   const sellInStatus =
     category === "backStagePasses"
       ? getSellInStatusForConcert(item.sellIn)
       : getSellInStatus(item.sellIn);
 
-  const quality = mxQuality + ITEMS_QUALITIES[category].default * sellInStatus;
-  item.quality = Math.max(quality, ITEMS_QUALITIES[category].min);
+  const mxQuality =
+    item.quality + ITEMS_QUALITIES[category].default * sellInStatus;
+
+  const quality = Math.max(mxQuality, ITEMS_QUALITIES[category].min);
+  item.quality = Math.min(quality, ITEMS_QUALITIES[category].max);
 
   return item;
 };
