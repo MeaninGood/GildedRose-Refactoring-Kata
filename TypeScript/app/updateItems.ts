@@ -13,11 +13,11 @@ export const updateItems = (
       ? getSellInStatusForConcert(item.sellIn)
       : getSellInStatus(item.sellIn);
 
-  const mxQuality =
+  const quality =
     item.quality + ITEMS_QUALITIES[category].default * sellInStatus;
 
-  const quality = Math.max(mxQuality, ITEMS_QUALITIES[category].min);
-  item.quality = Math.min(quality, ITEMS_QUALITIES[category].max);
+  const mxQuality = Math.max(quality, ITEMS_QUALITIES[category].min);
+  item.quality = Math.min(mxQuality, ITEMS_QUALITIES[category].max);
 
   return item;
 };
