@@ -1,9 +1,9 @@
 export const getSellInStatus = (sellIn: number) => {
-  return sellIn <= 0 ? 2 : 1;
+  return sellIn === 0 ? 2 : 1;
 };
 
 export const getSellInStatusForConcert = (sellIn: number) => {
-  if (sellIn <= 0) {
+  if (sellIn === 0) {
     return 0;
   } else if (sellIn <= 5) {
     return 3;

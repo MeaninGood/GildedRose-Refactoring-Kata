@@ -6,7 +6,7 @@ export const updateItems = (
   item: Item,
   category: "agedBrie" | "backStagePasses" | "sulfuras" | "conjured" | "other"
 ) => {
-  item.sellIn -= 1;
+  item.sellIn = Math.max(item.sellIn - 1, 0);
 
   const sellInStatus =
     category === "backStagePasses"
